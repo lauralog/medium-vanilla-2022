@@ -1,0 +1,16 @@
+.footer {
+    background-color: $black;
+    color: $white;
+    
+    .footer_holder {
+        @include holder_margin;
+        @include flex_row;
+    }
+}
+
+.footer .footer_holder .footer_links {
+    padding: 1rem 2rem;
+    a {
+        padding: 1rem 2rem;
+    }
+}

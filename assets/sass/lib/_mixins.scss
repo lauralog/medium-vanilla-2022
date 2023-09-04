@@ -1,0 +1,89 @@
+@mixin holder_margin {
+    margin: 0 7%;
+}
+
+@mixin flex_row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin btn {
+    padding: 7px 16px 9px;
+    border-radius: 99em;
+    background-color: $black;
+    color: $white;
+};
+
+@mixin section_name {
+    margin-bottom: 1rem;
+    font-variant: small-caps;
+    font-size: 1.25rem;
+    font-weight: 600;
+};
+
+@mixin post_trend_title {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 20px;
+    max-height: 40px;
+    overflow: hidden;
+}
+
+@mixin post_body {
+    .post_title {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 28px;
+        max-height: 56px;
+        overflow: hidden;
+    }
+    .post_summary {
+        color: darken($grey, 50%);
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 20px;
+        max-height: 40px;
+        overflow: hidden;
+    }
+}
+
+@mixin poster_footer_style {
+    color: darken($grey, 30%);
+    font-size: 0.9rem;
+}
+
+@mixin pic {
+    overflow: hidden;
+    img {
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+@mixin label {
+    border-radius: 3px;
+    border: 1px solid $grey;
+    padding: 6px 16px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    a {
+        color: darken($grey, 40%);
+        font-size: .9rem;
+    }
+}
+
+@mixin footer_label {
+    margin-right: 26px;
+    margin-bottom: 8px;
+    a {
+        color: darken($grey, 60%);
+        font-weight: 400;
+    }
+}
+
+@mixin user_name_style {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 16px;
+    max-height: 16px;
+}

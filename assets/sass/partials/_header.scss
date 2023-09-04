@@ -1,0 +1,60 @@
+
+.header {
+    position: fixed;
+    top: 0;
+    
+    width: 100%;
+    padding: 0 1rem;
+
+    background-color: $yellow;
+    border-bottom: 1px solid rgb(41, 41, 41);
+
+    &.white {
+        background-color: $white;
+        transition: background-color 300ms linear;
+        .header_holder .menu .menu_holder .header_menu_item.active{
+            background-color: green;
+            transition: background-color 300ms linear;
+        }
+    }
+}
+
+.header_holder {
+    position: relative;
+    height: 100%; 
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .header_logo {
+    width: 40%;
+    height: 25px;
+    display: flex;
+    svg {
+        path {}
+    }
+}
+
+.header  {
+    .menu{
+        .menu_holder {
+
+        }
+    }
+}
+
+.header .menu .menu_holder .header_menu_items{
+    @include flex_row;
+    align-items: center;
+    gap: 1rem;
+    .header_menu_item {
+        &.active {
+            @include btn;
+        }
+    }
+}
+

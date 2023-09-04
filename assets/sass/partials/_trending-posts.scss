@@ -1,0 +1,100 @@
+
+.trending {
+    border-bottom: 1px solid $grey;
+}
+
+.trending .trending_holder{
+    @include holder_margin;
+    padding: 40px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.trending .trending_holder .section_name {
+    margin-bottom: 1rem;
+    @include section_name;
+    h3 {
+        display: flex;
+        align-items: center;
+        span {
+            margin-right: .8rem;
+        }
+    }
+}
+
+.trending .trending_holder .trending_posts_holder{
+    margin: 0 auto;
+
+    @include flex_row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.trending .trending_holder .trending_posts_holder .trending_post{
+    margin-bottom: 1.5rem;
+    max-width: 33.3333%;
+    flex-basis: 33.3333%;
+    @include flex_row;
+    align-items: flex-start;
+    flex-grow: 0;
+    gap: 1rem;
+
+    .trending_id {
+        margin-top: -5px;
+        font-size: 2rem;
+        font-weight: 900;
+        color: $grey;
+    }
+
+    .trending_content{
+        .post_header{
+            display: flex;
+            align-items: center;
+            .user_pic {
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+                margin-right: 8px;
+                overflow: hidden;
+                @include pic;
+                img {}
+            }
+            .user_name {
+                .bold {
+                    font-weight: 700;
+                }
+            }
+        }
+        .post_body {
+            .post_title {
+                @include post_trend_title;
+            }
+        }
+        .post_footer {
+
+            @include flex_row;
+            gap: 8px;
+
+            @include poster_footer_style;
+            .post_date {}
+            .post_time_to_read {}
+            .post_membership {}
+            .labels {}
+            .post_bookmark {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        max-width: 50%;
+        flex-basis: 50%;
+    }
+
+    @media screen and (max-width: 800px) {
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+}
+

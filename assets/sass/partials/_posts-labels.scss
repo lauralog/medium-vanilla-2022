@@ -1,0 +1,156 @@
+.content_section {
+  @include holder_margin;
+}
+
+.content_section .content_holder {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 5%;
+  padding-top: 2rem;
+
+  .labels_holder {
+    height: fit-content;
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 105px;
+  }
+
+  .posts_holder {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: block;
+
+    .labels_holder {
+      position: static;
+    }
+  }
+}
+
+
+.labels_holder .section_name {
+  @include section_name;
+}
+
+.labels_holder .labels {
+  display: block;
+  box-sizing: inherit;
+
+  .category_labels {
+    border-bottom: 1px solid $grey;
+    box-sizing: inherit;
+    padding-bottom: 1.5rem;
+
+    @include flex_row;
+    flex-wrap: wrap;
+    .category_label {
+      @include label;
+    }
+  }
+
+  .footer_labels {
+    @include flex_row;
+    flex-wrap: wrap;
+    padding: 24px 0px;
+
+    .footer_label {
+      @include footer_label;
+    }
+  }
+}
+
+
+.posts_holder .post {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .post_picture {
+    width: 40%;
+    @include pic;
+    img {}
+  }
+}
+
+.posts_holder .post .post_content {
+  width: 100%;
+}
+
+.posts_holder .post .post_content .post_header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .user_pic {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+    overflow: hidden;
+    @include pic;
+    img {}
+  }
+  .user_name {
+    h4{}
+  }
+}
+
+.posts_holder .post .post_content .post_body {
+  @include post_body;
+  .post_title {}
+  .post_summary {}
+}
+
+.posts_holder .post .post_content .post_footer {
+  @include flex_row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: .5rem;
+  padding-top: 8px;
+  @include poster_footer_style;
+
+  .post_footer_left {
+    @include flex_row;
+    gap: .5rem;
+    .post_date {}
+    .post_time_to_read {}
+    .post_membership {}
+    .labels {
+      @include flex_row;
+      gap: 4px;
+      .label {
+        display: flex;
+        align-items: center;
+        padding: 2px 8px;
+
+        max-height: 22px;
+        background-color: $grey;
+        border-radius: 50px;
+
+        @media (max-width: 920px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .post_footer_right {
+    @include flex_row;
+    justify-content: flex-end;
+    .post_bookmark {}
+  }
+}
+
+.posts_holder .post .post_picture {
+  overflow: hidden;
+  @include pic;
+  img {}
+}
+ 
